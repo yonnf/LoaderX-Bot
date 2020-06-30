@@ -123,7 +123,7 @@ heroku stack:set container
 ```
 - Add heroku postgres database, connect to database and create a table:
 ```
-CREATE TABLE users (uid bigint, sudo boolean DEFAULT FALSE)
+CREATE TABLE users (uid bigint, sudo boolean DEFAULT FALSE);
 ```
 - Add Private Credentials and Config Stuff:
 ```

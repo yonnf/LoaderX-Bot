@@ -99,6 +99,7 @@ sudo docker run mirror-bot
 ```
 
 ## Deploying on Heroku
+
 - Run the script to generate token file(token.pickle) for Google Drive:
 ```
 python3 generate_drive_token.py
@@ -119,6 +120,10 @@ heroku git:remote -a appname
 - Change Dyno Stack to a Docker Container:
 ```
 heroku stack:set container
+```
+- Add heroku postgres database, connect to database and create a table:
+```
+CREATE TABLE users (uid bigint, sudo boolean DEFAULT FALSE)
 ```
 - Add Private Credentials and Config Stuff:
 ```

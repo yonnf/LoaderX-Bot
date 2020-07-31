@@ -11,6 +11,8 @@ import socket
 import psycopg2
 from psycopg2 import Error
 
+from telegraph import Telegraph
+
 socket.setdefaulttimeout(600)
 
 botStartTime = time.time()
@@ -134,6 +136,8 @@ try:
         USE_SERVICE_ACCOUNTS = False
 except KeyError:
     USE_SERVICE_ACCOUNTS = False
+
+telegra_ph = Telegraph(access_token=telegraph_token)
 
 updater = tg.Updater(token=BOT_TOKEN,use_context=True)
 bot = updater.bot
